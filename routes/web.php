@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\siteController;
+use App\Http\Controllers\ClientController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// cliente.php?id=1
+Route::get('/service/{id}', [siteController::class, 'index']);
+Route::get('/clients', [ClientController::class, 'index']);
