@@ -15,30 +15,20 @@
     </nav>
 
     <div class="container">
-        <h1>Lista de Clientes</h1>
+        <div class="card">
+            <div class="card-header">
+                Detalhes do Cliente {{ $client->nome }}
+            </div>
+        </div>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Endereço</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($clients as $client)
-                    <tr>
-                        <th>{{$client->id}}</th>
-                        <td>
-                            <a href="{{ route('clients.show'), $client }}">{{$client->nome}}</a>
-                        </td>
-                        <td>{{$client->endereco}}</td>
-                        <td></td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <div class="card-body">
+            <p><strong>ID: </strong> {{ $client->id }} </p>
+            <p><strong>Nome: </strong> {{ $client->nome }} </p>
+            <p><strong>Endereço: </strong> {{ $client->endereco }} </p>
+            <p><strong>Observação: </strong> {{ $client->observacao }} </p>
+            <br>
+            <a href="{{route('clients.index')}}" class="btn btn-success">Voltar</a>
+        </div>
     </div>
 
 

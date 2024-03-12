@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\siteController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 // cliente.php?id=1
 Route::get('/service/{id}', [siteController::class, 'index']);
-Route::get('/clients', [ClientController::class, 'index']);
+Route::get('/clients', [ClientController::class, 'index'])->name('clients.index');
+Route::get('/clients/{id}', [ClientController::class, 'show'])->name('clients.show');
+Route::get('/games', [GameController::class, 'index'])->name('games.index');
+Route::get('/games/{id}', [GameController::class, 'show'])->name('games.show');

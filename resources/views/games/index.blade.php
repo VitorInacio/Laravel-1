@@ -10,30 +10,28 @@
 
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">UniAlfa</a>
+            <a class="navbar-brand" href="#">Games</a>
         </div>
     </nav>
 
     <div class="container">
-        <h1>Lista de Clientes</h1>
+        <h1>Lista de Jogos</h1>
 
         <table class="table">
             <thead>
                 <tr>
                     <th>ID</th>
                     <th>Nome</th>
-                    <th>Endereço</th>
+                    <th>Lançamento</th>
                     <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($clients as $client)
+                @foreach ($games as $game)
                     <tr>
-                        <th>{{$client->id}}</th>
-                        <td>
-                            <a href="{{ route('clients.show'), $client }}">{{$client->nome}}</a>
-                        </td>
-                        <td>{{$client->endereco}}</td>
+                        <th>{{$game->id}}</th>
+                        <td><a href="{{ route('games.show'), $game }}">{{$game->nome}}</a></td>
+                        <td>{{$game->lancamento}}</td>
                         <td></td>
                     </tr>
                 @endforeach

@@ -15,30 +15,20 @@
     </nav>
 
     <div class="container">
-        <h1>Lista de Clientes</h1>
+        <div class="card">
+            <div class="card-header">
+                Detalhes do Jogo {{ $game->nome }}
+            </div>
+        </div>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Nome</th>
-                    <th>Endereço</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($clients as $client)
-                    <tr>
-                        <th>{{$client->id}}</th>
-                        <td>
-                            <a href="{{ route('clients.show'), $client }}">{{$client->nome}}</a>
-                        </td>
-                        <td>{{$client->endereco}}</td>
-                        <td></td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
+        <div class="card-body">
+            <p><strong>ID: </strong> {{ $game->id }} </p>
+            <p><strong>Nome: </strong> {{ $game->nome }} </p>
+            <p><strong>Lançamento: </strong> {{ $game->lancamento }} </p>
+            <p><strong>Observação: </strong> {{ $game->observacao }} </p>
+            <br>
+            <a href="{{route('games.index')}}" class="btn btn-success">Voltar</a>
+        </div>
     </div>
 
 
