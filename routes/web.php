@@ -3,6 +3,7 @@
 use App\Http\Controllers\siteController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\ProductsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,3 +27,8 @@ Route::post('/clients', [ClientController::class, 'store'])->name('clients.store
 
 Route::get('/games', [GameController::class, 'index'])->name('games.index');
 Route::get('/games/{id}', [GameController::class, 'show'])->name('games.show');
+
+// trabalho
+
+Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
+Route::get('/products/{id}', [ProductsController::class, 'show'])->name('products.show');
