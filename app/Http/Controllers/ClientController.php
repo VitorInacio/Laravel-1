@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Client;
+use App\Models\Feature;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -13,13 +14,16 @@ class ClientController extends Controller
     public function index()
     {
         $clients = Client::get();
+        $botao = Feature::get();
         // foreach($clients as $client)
         // {
         //     dd($client->nome);
         // }
+
         return view(
             'clients.index', [
-               'clients' => $clients
+               'clients' => $clients,
+                'botao'=> $botao,
             ]
         );
     }
