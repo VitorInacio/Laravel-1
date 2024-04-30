@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\siteController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,5 @@ Route::delete('/clients/{id}', [ClientController::class, 'destroy'])->name('clie
 
 Route::get('/games', [GameController::class, 'index'])->name('games.index');
 Route::get('/games/{id}', [GameController::class, 'show'])->name('games.show');
+
+Route::get('/features', [FeatureController::class, 'index'])->name('features.index');

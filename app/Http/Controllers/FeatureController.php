@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Feature;
 use Illuminate\Http\Request;
 
 class FeatureController extends Controller
@@ -11,7 +12,14 @@ class FeatureController extends Controller
      */
     public function index()
     {
-        //
+        $features = Feature::get();
+
+        return view(
+            'features.index', [
+                'features' => $features
+            ]
+        );
+
     }
 
     /**
