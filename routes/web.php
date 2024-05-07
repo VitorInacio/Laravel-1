@@ -4,6 +4,7 @@ use App\Http\Controllers\siteController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\ViacepController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +33,6 @@ Route::get('/games', [GameController::class, 'index'])->name('games.index');
 Route::get('/games/{id}', [GameController::class, 'show'])->name('games.show');
 
 Route::get('/features', [FeatureController::class, 'index'])->name('features.index');
+
+Route::get('/viacep', [ViacepController::class, 'index'])->name('viacep.index');
+//Route::get('/viacep/{cep}', [ViacepController::class, 'show'])->name('viacep.show');
