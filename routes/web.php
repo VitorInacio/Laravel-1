@@ -35,4 +35,4 @@ Route::get('/games/{id}', [GameController::class, 'show'])->name('games.show');
 Route::get('/features', [FeatureController::class, 'index'])->name('features.index');
 
 Route::get('/viacep', [ViacepController::class, 'index'])->name('viacep.index');
-//Route::get('/viacep/{cep}', [ViacepController::class, 'show'])->name('viacep.show');
+Route::post('/viacep', [ViacepController::class, 'index'])->name('viacep.search');

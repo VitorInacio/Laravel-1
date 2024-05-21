@@ -4,11 +4,11 @@
 
 <h1>Buscando CEP</h1>
 
-<form action="{{ route('viacep.index') }}" method="GET">
+<form action="{{ route('viacep.search') }}" method="POST">
     @csrf
     <br>
     <div class="mb-3">
-        <input type="number" class="form-control" id="cep" name="cep" placeholder="Digite o CEP" maxlength="8">
+        <input type="number" class="form-control" id="cep" name="cep" placeholder="Digite o CEP" maxlength="8" required>
     </div>
 
     <div class="mb-3">
@@ -16,9 +16,10 @@
     </div>
 </form>
 
-@if (!$cepInfo == null)
+@if (isset($cepInfo['cep']))
 
     <h2>Informações do CEP</h2>
+
     <ul>
         <li><strong>CEP:</strong> {{$cepInfo['cep']}}</li>
         <li><strong>Logradouro:</strong> {{$cepInfo['logradouro']}}</li>
