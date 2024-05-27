@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 class ViacepController extends Controller
 {
 
-    public function index(Request $request)
+    public function index()
     {
         return view(
             'viacep.index'
