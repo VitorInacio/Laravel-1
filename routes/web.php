@@ -5,6 +5,7 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\ViacepController;
+use App\Http\Controllers\BattleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,3 +37,6 @@ Route::get('/features', [FeatureController::class, 'index'])->name('features.ind
 
 Route::get('/viacep', [ViacepController::class, 'index'])->name('viacep.index');
 Route::post('/viacep', [ViacepController::class, 'index'])->name('viacep.search');
+
+Route::get('/battle', [BattleController::class, 'index'])->name('battle.index');
+Route::post('/battle', [BattleController::class, 'search'])->name('battle.search');
