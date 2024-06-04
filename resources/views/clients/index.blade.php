@@ -59,5 +59,5 @@
                 Cadastrar cliente
             </a>
         @endif
-        {{ $b }}
+
 @endsection

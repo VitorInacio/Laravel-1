@@ -6,6 +6,8 @@ use App\Http\Controllers\FeatureController;
 use App\Http\Controllers\GameController;
 use App\Http\Controllers\ViacepController;
 use App\Http\Controllers\BattleController;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 // cliente.php?id=1
 Route::get('/service/{id}', [SiteController::class, 'index']);
 
-Route::get('/clients', [ClientController::class, 'index'])->name('clients.index');
+Route::get('/clients', [ClientController::class, 'index'])->name('clients.index')->middleware(['auth']);
 route::get('/clients/create', [ClientController::class, 'create'])->name('clients.create');
 Route::get('/clients/{id}', [ClientController::class, 'show'])->name('clients.show');
 Route::post('/clients', [ClientController::class, 'store'])->name('clients.store');
@@ -40,3 +42,17 @@ Route::post('/viacep', [ViacepController::class, 'index'])->name('viacep.search'
 
 Route::get('/battle', [BattleController::class, 'index'])->name('battle.index');
 Route::post('/battle', [BattleController::class, 'search'])->name('battle.search');
+
+Route::get('/home', [HomeController::class, 'index']);
+
+Route::get('/logout', function(){
+    Auth::logout();
+    return view('home');
+});
+
+Route::get('/', function() {
+    return view('welcome');
+});
+
+// Desafio: Alterar a barra de navegação de todas as páginas e verificar se está ou não logado
+
